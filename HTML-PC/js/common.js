@@ -64,6 +64,20 @@
             $('.overlay-bg').removeClass('open');
             $('#vibeji-ham,.main-menu').removeClass('open');
         });
+
+        $('.game-network').find('.icon').click(function(event) {
+            event.stopPropagation();
+            $('.game-network .icon').not(this).removeClass('open');
+            $(this).toggleClass('open');
+        });
+        $('.game-network .close').click(function () {
+            $('.game-network .icon').removeClass('open');
+        });
+        // $(document).click(function() {
+        //     $('.game-network .icon').removeClass('open');
+        // });
+
+
     }
     //Hover
 
@@ -141,7 +155,10 @@
     }
 
     $(function () {
-        AOS.init({ disable: 'mobile' });
+        AOS.init({ 
+            duration: 1200,
+            disable: 'mobile' 
+        });
         backToTop();
         onCLick();
         onlyscroll();
