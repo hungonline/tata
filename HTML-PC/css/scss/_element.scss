@@ -5,6 +5,7 @@
 .title-cate{
     font: 600 48px/1.6 var(--font1);
     margin-bottom: 40px;
+    .year{color: #FEE673;}
     @media (max-width: 1280px) {
         font-size: 36px;
         margin-bottom: 25px;
@@ -448,9 +449,19 @@
     background: #131925;
     padding: 48px 0 0 0;
     .list {
-        column-gap: 40px;
-        row-gap: 40px;
+        font-size: 0;
+        margin-left: -20px;
+        margin-right: -20px;
+        text-align: center;
         .itemt{
+            width: 16.66%;
+            padding: 0 20px;
+            margin-bottom: 40px;
+            font-size: 16px;
+            display: inline-block;
+            vertical-align: top;
+            border-radius: 10px;
+            cursor: pointer;
             &.grayscale{
                 img{
                     filter: grayscale(100%);
@@ -461,18 +472,105 @@
                     filter: brightness(0) invert(1);
                     -webkit-filter: brightness(0) invert(1);
                 }
+                &+ .info-detail{
+                    img{
+                        filter: brightness(0) invert(1);
+                        -webkit-filter: brightness(0) invert(1);
+                    }
+                }
             }
-
+            &.active{
+                box-shadow: 1px 1px 6px #ccc;
+            }
+        }
+        .info-detail{
+            width: 100%;
+            position: relative;
+            float: left;
+            font-size: 16px;
+            display: none;
+            margin-bottom: 40px;
+            text-align: left;
+            .flex{
+                padding: 16px;
+                border-radius: 50px;
+                background: rgba(129, 119, 119, 0.52);
+                justify-content: center;
+                gap: 30px;
+                max-width: 1000px;
+                margin: 0 auto;
+                position: relative;
+                .close{
+                    opacity: 1;
+                    font-weight: 400;
+                    text-shadow: none;
+                    color: #fff;
+                    font-family: -webkit-body;
+                    position: absolute;
+                    right: 30px;
+                    top: 16px;
+                    font-size: 35px;
+                    width: 30px;
+                    height: 30px;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+            .logo{
+                img{
+                    max-width: 150px;
+                }
+            }
+            .name{
+                color: #34A9C3;
+                font-size: 30px;
+                font-weight: 600;
+            }
+            ul{
+                margin-bottom: 0;
+                padding-left: 25px;
+                li{
+                    list-style: disc;
+                }
+            }
         }
         @media (max-width: 991px) {
-            grid-template-columns: repeat(4, 1fr);
+            .itemt{
+                width: 25%;
+            }
         }
         @media (max-width: 767px) {
-            column-gap: 24px;
-            row-gap: 24px;
+
         }
         @media (max-width: 576px) {
-            grid-template-columns: repeat(3, 1fr);
+            margin-left: -5px;
+            margin-right: -5px;
+            .itemt{
+                width: 33.33%;
+                margin-bottom: 25px;
+                padding: 0 15px;
+            }
+            .info-detail{
+                font-size: 14px;
+                .flex{
+                    gap: 10px;
+                    display: block;
+                    border-radius: 10px;
+                    .close{
+                        right: 10px;
+                    }
+                }
+                .logo{
+                    margin-bottom: 10px;
+                    img{
+                        max-width: 100px;
+                    }
+                }
+                .name{
+                    font-size: 20px;
+                }
+            }
         }
     }
     @media (max-width: 767px) {

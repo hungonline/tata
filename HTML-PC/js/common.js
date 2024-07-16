@@ -76,7 +76,20 @@
         // $(document).click(function() {
         //     $('.game-network .icon').removeClass('open');
         // });
-
+        $('.portfolio-tata .list .itemt').click(function (event) {
+            $('.portfolio-tata .list .itemt').removeClass('active');
+            if ($(this).next().css('display') == 'none') {
+                $('.info-detail').slideUp();
+                $(this).next().stop(true, true).slideDown();
+                $(this).addClass('active');
+            } else {
+                $(this).parent().find('.info-detail').slideUp();
+            }
+        });
+        $('.info-detail .close').click(function (event) {
+            $('.portfolio-tata .list .itemt').removeClass('active');
+            $('.info-detail').slideUp();
+        });
 
     }
     //Hover
