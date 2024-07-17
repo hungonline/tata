@@ -454,7 +454,7 @@
         margin-right: -20px;
         text-align: center;
         .itemt{
-            width: 16.66%;
+            width: 190px;
             padding: 0 20px;
             margin-bottom: 40px;
             font-size: 16px;
@@ -535,13 +535,19 @@
                 }
             }
         }
+        &.min{
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        @media (max-width: 1025px) {
+            .itemt{
+                width: 160px;
+            }
+        }
         @media (max-width: 991px) {
             .itemt{
                 width: 25%;
             }
-        }
-        @media (max-width: 767px) {
-
         }
         @media (max-width: 576px) {
             margin-left: -5px;
